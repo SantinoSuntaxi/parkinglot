@@ -32,7 +32,7 @@
   // set your channel's read api key here if necessary
   var api_key = 'FVMD1WSAEHIRG5F7';
   // maximum value for the gauge
-  var max_gauge_value = 5;
+  var max_gauge_value = 1;
   // name of the gauge
   var gauge_name ;
 
@@ -40,10 +40,8 @@
   var chart, charts, data;
 
   // load the data
-  $(document).ready(function co(){
-
-
-     $("button").click(function co(){
+  
+  function co(){
 
     // variable for the data point
     var p1;
@@ -55,14 +53,14 @@
     $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
 
       // get the data point
-      //p1 = data.field1;
-      //p2 = data.field2;
-      //p3 = data.field3;
+      p1 = data.field1;
+      p2 = data.field2;
+      p3 = data.field3;
 
          // get the data point
-      p1 = 1 ;
-      p2 = 0 ;
-      p3 = 1 ;
+      //p1 = 1 ;
+      //p2 = 0 ;
+      //p3 = 1 ;
 
 document.write("<table border=0 width=1400>")
 document.write(" <tr>")
@@ -112,28 +110,20 @@ document.write(" <td width=100%>")
             document.write('<br/> <img src="./image/carro.jpeg" width="200" height="100" >'); 
                   }
 
- setInterval('co()', 15000);
+ 
  
         });
 
-         
+setInterval('co()', 5000);
 
-
-    });
-    
-    
-  });
-
+    }
 
 
 </script>
-    
-
-
-    
+        
 </head>
 
-<body>
+<body onload = "co()">
 
 <div class="a">
 <h2>UNIVERSIDAD</h2>
@@ -145,7 +135,7 @@ document.write(" <td width=100%>")
 
 
 <div class="b">
-<button>Get JSON data</button>
+
 </div>
 <div></div>
   
