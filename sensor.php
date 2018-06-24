@@ -55,9 +55,14 @@
     $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
 
       // get the data point
-      p1 = data.field5;
-      p2 = data.field6;
-      p3 = data.field7;
+      //p1 = data.field1;
+      //p2 = data.field2;
+      //p3 = data.field3;
+
+         // get the data point
+      p1 = 1 ;
+      p2 = 0 ;
+      p3 = 1 ;
 
 document.write("<table border=0 width=1400>")
 document.write(" <tr>")
@@ -85,6 +90,13 @@ document.write(" <td width=100%>")
       
       if (p1 == 0){
             document.write("<br/> <h3><font face=Verdana color=red>PARQUEADERO UNO LIBRE</font></h3>");
+            document.write('<br/>  <img src="./image/x.png" width="200" height="100" >'); 
+            
+         }
+
+
+      if (p2 == 0){
+            document.write("<br/> <h3><font face=Verdana color=red>PARQUEADERO DOS LIBRE</font></h3>");
             document.write('<br/>  <img src="./image/x.png" width="200" height="100" >'); 
             
          }
